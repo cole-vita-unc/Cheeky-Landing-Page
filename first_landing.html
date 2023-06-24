@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home | Cheeky</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="Gradient.js" ></script>
+</head>
+<style>
+    body {
+        margin:0;
+        padding:0;
+    }
+    #gradient-canvas {
+        --gradient-color-1: #f8f806;
+        --gradient-color-2: #72724d;
+        --gradient-color-3: #2b2b2b;
+        --gradient-color-4: #b6b43b;
+    }
+</style>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Cheeky</h1>
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+
+    </header>
+
+    <div class="container">
+        <div class="section" id="section1">
+            <canvas id="gradient-canvas" style="width:100vw;height:100vh"></canvas>
+            <div class="center-content">
+                <h1>Shopping Made Cheeky</h1>
+            </div>
+        </div>
+        <div class="section" id="section2">
+            <div class="left-content">
+                <h2>Your AI-powered shopping tool</h2>
+                <p>Helping you Shop, Style, Share, and Explore easier than ever.</p>
+                <a href="#">Learn More</a>
+            </div>
+            <div class="right-content">
+                <img src="section-image.webp" alt="Product Demo">
+            </div>
+        </div>
+        <div class="section" id="section3">
+            <div class="left-content">
+                <h2>Your Style, Your Profile, Your Experience</h2>
+                <p>Introducing the world’s first place to showcase your style,</p>
+                <p>organize your closet and browse your wardrobe,</p>
+                </p> anywhere, anytime, anyplace.</p>
+                <a href="#">Learn More</a>
+            </div>
+            <div class="right-content">
+                <img src="section-image.webp" alt="Product Demo">
+            </div>
+        </div>
+        <!-- More sections can be added as needed -->
+    </div>
+    <script src="script.js"></script>
+    <script>
+        var gradient = new Gradient()
+        gradient.initGradient('#gradient-canvas');
+    </script>
+</body>
+</html>
