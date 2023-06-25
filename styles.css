@@ -17,8 +17,8 @@ header {
 .section h1{
     font-size: 50px;
     margin: 0;
-    padding-bottom: 200px;
-    padding-left: 650px;
+    padding-bottom: 150px;
+    padding-left: 0px;
     white-space: nowrap;
 }
 
@@ -122,6 +122,10 @@ nav a {
     z-index: -1;
 }
 
+.right-content{
+    padding-left: 50px;
+}
+
 .image-slider {
     display: flex;
     overflow-x: auto;
@@ -140,3 +144,29 @@ nav a {
     0% { transform: translateX(0); }
     100% { transform: translateX(-100%); }
 }
+
+.left-content a {
+    color: #FFD700; /* Make the text color white */
+    text-decoration: none; /* Remove the default underline */
+    display: inline-block; /* Make the a element an inline block */
+    position: relative; /* Position relative to the a element */
+    transition: 0.3s; /* Add a transition effect */
+}
+
+.left-content a::after {
+    content: '';
+    position: absolute; /* Position absolute to the a element */
+    bottom: 0; /* Position at the bottom of the a element */
+    left: 0; /* Position at the left of the a element */
+    width: 0;
+    height: 2px;
+    background: #FFD700; /* Yellow background */
+    transition: width 0.5s;
+}
+
+.left-content a:hover::after {
+    width: 100%; /* Full width on hover */
+}
+
+
+
