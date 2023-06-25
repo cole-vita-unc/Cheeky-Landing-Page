@@ -19,7 +19,7 @@
 </style>
 <body>
     <header>
-        <div class="logo">
+        <div class="logo"> 
             <h1>Cheeky</h1>
         </div>
         <div class="nav-links">
@@ -34,7 +34,7 @@
 
     <div class="container">
         <div class="section" id="section1">
-            <canvas id="gradient-canvas" style="width:100vw;height:100vh"></canvas>
+            <canvas id="gradient-canvas" style="width:100vw;height: 100vh"></canvas>
             <div class="center-content">
                 <h1>Shopping Made Cheeky</h1>
             </div>
@@ -60,6 +60,7 @@
                 <img src="section-image.webp" alt="Product Demo">
             </div>
         </div>
+
         <div class="section" id="section3">
             <div class="left-content">
                 <h2>Your Style, Your Profile, Your Experience</h2>
@@ -72,12 +73,56 @@
                 <img src="float3.png" alt="Product Demo">
             </div>
         </div>
+        
+        <div class="section" id="section4">
+            <div class="left-content">
+                <h2>One platform to shop every site </h2>
+                <p> Learn more about how easy it is to find new clothes </p>
+                <a href="#">Learn More</a>
+            </div>
+            <div class="right-content">
+                <img src="float4.png" alt="Product Demo">
+            </div>
+        </div>
+        
         <!-- More sections can be added as needed -->
     </div>
     <script src="script.js"></script>
     <script>
         var gradient = new Gradient()
         gradient.initGradient('#gradient-canvas');
+    </script>
+    <script>
+        // Select all sections
+        const sections = document.querySelectorAll('.section');
+    
+        // Function to check if an element is in the viewport
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+    
+        // Function to check if any section is in the viewport
+        function checkIfInView() {
+            for (const section of sections) {
+                if (isInViewport(section)) {
+                    section.classList.add('in-view');
+                } else {
+                    section.classList.remove('in-view');
+                }
+            }
+        }
+    
+        // Listen for scroll events
+        window.addEventListener('scroll', checkIfInView);
+    
+        // Check if any section is in the viewport initially
+        checkIfInView();
     </script>
 </body>
 </html>
