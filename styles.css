@@ -23,6 +23,13 @@ header {
     white-space: nowrap;
 }
 
+/* Black background for slogan with some transparency */
+/* .center-content {
+    background-color: rgba(0, 0, 0, 0.7); 
+    padding: 20px;
+    display: inline-block;
+} */
+
 .sticky {
     position: fixed;
     top: 0;
