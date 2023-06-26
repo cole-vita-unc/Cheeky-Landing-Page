@@ -189,45 +189,21 @@ nav a {
     transform: translateY(-70px);
 }
 
-#section5 form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-#section5 input[type="text"], #section5 input[type="email"] {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-}
-
-#section5 input[type="submit"] {
-    background-color: #f8f806;
-    color: #000;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.form-container {
-    display: flex;
-    gap: 10px;
-}
-.form-container input {
-    width: 200; /* Adjust as needed */
-}
-
 .newsletter-section {
     flex-direction: column; /* Change the direction of the flex items to column */
     align-items: center; /* Align the flex items to the start */
-    padding: 20px;
     text-align: center; 
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-70px);
 }
 
 .newsletter-section h2, .newsletter-section p {
     width: 100%; /* Make the text take up the full width */
     font-size: 30px;
     padding-bottom: 100px;
+    margin-bottom: -80px; /* Reduce the bottom margin */
+    transform: translateY(-150px);
 }
 
 .form-container {
@@ -235,11 +211,16 @@ nav a {
     text-align: center;
     width: 50%; /* Make the form container take up the full width */
     justify-content: space-between; /* Distribute the form fields evenly */
+    gap: 10px; /* Add a gap between the form fields */
+    margin-top: -80px;
 }
 
 .form-container input {
     width: calc(33% - 10px); /* Divide the width evenly between the form fields, subtracting the gap */
 }
+
+
+
 
 
 
