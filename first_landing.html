@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Home | Cheeky</title>
+    <title>Cheeky | Home</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="Gradient.js" ></script>
 </head>
 <style>
-    body {
-        margin:0;
-        padding:0;
-    }
     #gradient-canvas {
-        --gradient-color-1: #f8f806;
-        --gradient-color-2: #72724d;
-        --gradient-color-3: #2b2b2b;
-        --gradient-color-4: #b6b43b;
+        --gradient-color-1: #f2ea11;
+        --gradient-color-2: #f9d004;
+        --gradient-color-3: #0e0e0e;
+        --gradient-color-4: #0e0e0e;
     }
 </style>
 <body>
     <header>
-        <div class="logo">
-            <h1>Cheeky</h1>
+        <div class="logo"> 
+            <a href="/"><h1>Cheeky</h1></a>
         </div>
         <div class="nav-links">
             <ul>
-                <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
+                <li><a href="{% url 'search' %}">Search</a></li>
                 <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Login</a></li>
             </ul>
         </div>
 
@@ -34,22 +31,34 @@
 
     <div class="container">
         <div class="section" id="section1">
-            <canvas id="gradient-canvas" style="width:100vw;height:100vh"></canvas>
+            <canvas id="gradient-canvas" style="width:100vw;height: 100vh"></canvas>
             <div class="center-content">
-                <h1>Shopping Made Cheeky</h1>
+                <h1>Shopping Made Cheeky.</h1>
             </div>
+
+            <!-- <div class="image-slider">
+                <img src="float1.png" alt="Image 1">
+                <img src="float2.png" alt="Image 2">
+                <img src="float4.png" alt="Image 3">
+                <img src="float5.png" alt="Image 4">
+                <img src="float6.png" alt="Image 5">
+                <img src="float7.png" alt="Image 6">
+                <img src="float8.png" alt="Image 7">
+            </div> -->
+
         </div>
-        <div class="section" id="section2">
+        <div class="section animated-section" id="section2">
             <div class="left-content">
                 <h2>Your AI-powered shopping tool</h2>
                 <p>Helping you Shop, Style, Share, and Explore easier than ever.</p>
                 <a href="#">Learn More</a>
             </div>
             <div class="right-content">
-                <img src="section-image.webp" alt="Product Demo">
+                <img src="images/float.png" alt="Product Demo">
             </div>
         </div>
-        <div class="section" id="section3">
+
+        <div class="section animated-section" id="section3">
             <div class="left-content">
                 <h2>Your Style, Your Profile, Your Experience</h2>
                 <p>Introducing the world’s first place to showcase your style,</p>
@@ -58,15 +67,72 @@
                 <a href="#">Learn More</a>
             </div>
             <div class="right-content">
-                <img src="section-image.webp" alt="Product Demo">
+                <img src="images/float2.png" alt="Product Demo">
             </div>
         </div>
+
+        <div class="section animated-section" id="section4">
+            <div class="left-content">
+                <h2>One platform to shop every site </h2>
+                <p> Learn more about how easy it is to find new clothes </p>
+                <a href="#">Learn More</a>
+            </div>
+            <div class="right-content">
+                <img src="images/float5.png" alt="Product Demo">
+            </div>
+        </div>
+
+        <div class="section newsletter-section" id="newsletter">
+            <h2>Stay Up To Date!</h2>
+            <p>Sign up to our newsletter</p>
+            <div class="form-container">
+                <input type="text" id="fname" name="fname" placeholder="First Name">
+                <input type="text" id="lname" name="lname" placeholder="Last Name">
+                <input type="email" id="email" name="email" placeholder="Email">
+                <input type="submit" value="Submit">
+            </div>
+        </div>        
+        
+
         <!-- More sections can be added as needed -->
     </div>
-    <script src="script.js"></script>
+
+    <script src="/static/landing/script.js"></script>
     <script>
         var gradient = new Gradient()
         gradient.initGradient('#gradient-canvas');
+    </script>
+    <script>
+        // Select all sections
+        const sections = document.querySelectorAll('.section');
+    
+        // Function to check if an element is in the viewport
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+    
+        // Function to check if any section is in the viewport
+        function checkIfInView() {
+            for (const section of sections) {
+                if (isInViewport(section)) {
+                    section.classList.add('in-view');
+                } else {
+                    section.classList.remove('in-view');
+                }
+            }
+        }
+    
+        // Listen for scroll events
+        window.addEventListener('scroll', checkIfInView);
+    
+        // Check if any section is in the viewport initially
+        checkIfInView();
     </script>
 </body>
 </html>

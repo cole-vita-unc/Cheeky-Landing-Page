@@ -1,24 +1,43 @@
+.logo a {
+    text-decoration:none;
+    color:#fcfeff;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #000;
-    color: #f4f4ee;
+    background-color: #121111;
+    color: #f7fbfb;
+}
+
+#section1{
+    color:#fbf9f9;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 15px;
     box-sizing: border-box;
+    color: #0f1010;
 }
 
 .section h1{
     font-size: 50px;
     margin: 0;
-    padding-bottom: 200px;
+    padding-top: 0px;
+    padding-left: 0px;
+    white-space: nowrap;
 }
+
+/* Background for slogan with some transparency */
+/* .center-content {
+    background-color: rgba(255, 255, 255, 0.7); 
+    padding: 20px;
+    display: inline-block;
+} */
 
 .sticky {
     position: fixed;
@@ -59,7 +78,7 @@ nav img{
 }
 
 .nav-links ul li a{
-    color: #FFD700;
+    color: #eff6f8;
     text-decoration: none;
     font-size: 16px;
 }
@@ -68,7 +87,7 @@ nav img{
     content: '';
     width: 0%;
     height: 2px;
-    background: #FFD700;
+    background: #f5f503;
     display: block;
     margin: auto;
     transition: 0.5s;
@@ -79,7 +98,7 @@ nav img{
 }
 
 nav a {
-    color: #FFD700;
+    color: #070707;
     text-decoration: none;
 }
 
@@ -105,12 +124,17 @@ nav a {
     position: relative;
 }
 
+#section2{
+    align-items: center;
+    padding-bottom: 20px;
+}
+
 .center-content {
     text-align: center;
 }
 
 .section:not(.in-view) {
-    transform: translateY(100%);
+    transform: translateY(190%);
 }
 
 #gradient-canvas {
@@ -119,3 +143,99 @@ nav a {
     left: 0;
     z-index: -1;
 }
+
+.right-content{
+    padding-left: 50px;
+}
+
+.image-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 0px;
+    padding-top: 200px;
+    animation: scroll 10s linear infinite;
+    width: 100%;
+}
+
+.image-slider img {
+    flex: 1;
+    height: 200px; /* Adjust as needed */
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+.left-content a {
+    color: #f7f714; 
+    text-decoration: none; /* Remove the default underline */
+    display: inline-block; /* Make the a element an inline block */
+    position: relative; /* Position relative to the a element */
+    transition: 0.3s; /* Add a transition effect */
+}
+
+.left-content a::after {
+    content: '';
+    position: absolute; /* Position absolute to the a element */
+    bottom: 0; /* Position at the bottom of the a element */
+    left: 0; /* Position at the left of the a element */
+    width: 0;
+    height: 2px;
+    background: #f5ed03; /* Yellow background */
+    transition: width 0.5s;
+}
+
+.left-content a:hover::after {
+    width: 100%; /* Full width on hover */
+}
+
+.section {
+    opacity: 1;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.section.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.left-content, .right-content {
+    transform: translateY(-70px);
+}
+
+.newsletter-section {
+    flex-direction: column; /* Change the direction of the flex items to column */
+    align-items: center; /* Align the flex items to the start */
+    text-align: center; 
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-70px);
+}
+
+.newsletter-section h2, .newsletter-section p {
+    width: 100%; /* Make the text take up the full width */
+    font-size: 30px;
+    padding-bottom: 100px;
+    margin-bottom: -80px; /* Reduce the bottom margin */
+    transform: translateY(-150px);
+}
+
+.form-container {
+    display: flex;
+    text-align: center;
+    width: 50%; /* Make the form container take up the full width */
+    justify-content: space-between; /* Distribute the form fields evenly */
+    gap: 10px; /* Add a gap between the form fields */
+    margin-top: -80px;
+}
+
+.form-container input {
+    width: calc(33% - 10px); /* Divide the width evenly between the form fields, subtracting the gap */
+}
+
+
+
+
+
